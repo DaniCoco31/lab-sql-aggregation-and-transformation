@@ -5,6 +5,11 @@ SELECT
   MIN(length) AS min_duration,
   MAX(length) AS max_duration
 FROM film;
+-- 1.2 Express the average movie duration in hours and minutes:
+SELECT
+  FLOOR(AVG(length) / 60) AS hours,
+  ROUND(AVG(length) % 60) AS minutes
+FROM film;
 -- 2.1 Calculate the number of days the company has been operating:
 SELECT DATEDIFF(MAX(rental_date), MIN(rental_date)) AS days_operated
 FROM rental;
